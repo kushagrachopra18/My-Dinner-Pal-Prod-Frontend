@@ -1,4 +1,3 @@
-# My-Dinner-Pal-React-Dev-Frontend
-
-This is the development environment for the My dinner Pal frontend
 # My-Dinner-Pal-React-Prod-Frontend
+
+This is the production environment for the My Dinner Pal frontend
