@@ -1,17 +1,23 @@
 {
   "files": {
-    "main.js": "/My-Dinner-Pal-React-Prod-Frontend/static/js/main.b3aec375.chunk.js",
-    "main.js.map": "/My-Dinner-Pal-React-Prod-Frontend/static/js/main.b3aec375.chunk.js.map",
-    "runtime-main.js": "/My-Dinner-Pal-React-Prod-Frontend/static/js/runtime-main.00cb2cce.js",
-    "runtime-main.js.map": "/My-Dinner-Pal-React-Prod-Frontend/static/js/runtime-main.00cb2cce.js.map",
-    "static/js/2.6ed723e7.chunk.js": "/My-Dinner-Pal-React-Prod-Frontend/static/js/2.6ed723e7.chunk.js",
-    "static/js/2.6ed723e7.chunk.js.map": "/My-Dinner-Pal-React-Prod-Frontend/static/js/2.6ed723e7.chunk.js.map",
+    "main.css": "/My-Dinner-Pal-React-Prod-Frontend/static/css/main.9d5b29c0.chunk.css",
+    "main.js": "/My-Dinner-Pal-React-Prod-Frontend/static/js/main.96f63843.chunk.js",
+    "main.js.map": "/My-Dinner-Pal-React-Prod-Frontend/static/js/main.96f63843.chunk.js.map",
+    "runtime-main.js": "/My-Dinner-Pal-React-Prod-Frontend/static/js/runtime-main.a70029fd.js",
+    "runtime-main.js.map": "/My-Dinner-Pal-React-Prod-Frontend/static/js/runtime-main.a70029fd.js.map",
+    "static/js/2.c327a5f8.chunk.js": "/My-Dinner-Pal-React-Prod-Frontend/static/js/2.c327a5f8.chunk.js",
+    "static/js/2.c327a5f8.chunk.js.map": "/My-Dinner-Pal-React-Prod-Frontend/static/js/2.c327a5f8.chunk.js.map",
+    "static/js/3.ebd94a99.chunk.js": "/My-Dinner-Pal-React-Prod-Frontend/static/js/3.ebd94a99.chunk.js",
+    "static/js/3.ebd94a99.chunk.js.map": "/My-Dinner-Pal-React-Prod-Frontend/static/js/3.ebd94a99.chunk.js.map",
     "index.html": "/My-Dinner-Pal-React-Prod-Frontend/index.html",
-    "static/js/2.6ed723e7.chunk.js.LICENSE.txt": "/My-Dinner-Pal-React-Prod-Frontend/static/js/2.6ed723e7.chunk.js.LICENSE.txt"
+    "static/css/main.9d5b29c0.chunk.css.map": "/My-Dinner-Pal-React-Prod-Frontend/static/css/main.9d5b29c0.chunk.css.map",
+    "static/js/2.c327a5f8.chunk.js.LICENSE.txt": "/My-Dinner-Pal-React-Prod-Frontend/static/js/2.c327a5f8.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/My-Dinner-Pal-React-Prod-Frontend/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.00cb2cce.js",
-    "static/js/2.6ed723e7.chunk.js",
-    "static/js/main.b3aec375.chunk.js"
+    "static/js/runtime-main.a70029fd.js",
+    "static/js/2.c327a5f8.chunk.js",
+    "static/css/main.9d5b29c0.chunk.css",
+    "static/js/main.96f63843.chunk.js"
   ]
 }
