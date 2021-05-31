@@ -1,5 +1,5 @@
 {
-  "name": "my-dinner-pal-react-frontend",
+  "name": "my-dinner-pal-react-prod-frontend",
   "version": "1.0.0",
   "description": "Converting frontend fron jquery to react",
   "main": "index.js",
