@@ -5,10 +5,10 @@
   "description": "Converting frontend fron jquery to react",
   "main": "index.js",
   "scripts": {
-    "start": "snowpack dev",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   },
   "author": "Kushagra Chopra",
   "license": "ISC",
