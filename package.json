@@ -1,15 +1,14 @@
 {
   "name": "my-dinner-pal-react-prod-frontend",
   "version": "1.0.0",
+  "homepage": "https://kushagrachopra18.github.io/My-Dinner-Pal-React-Prod-Frontend",
   "description": "Converting frontend fron jquery to react",
   "main": "index.js",
   "scripts": {
-    "start-dev": "snowpack dev",
+    "start": "snowpack dev",
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build"
+    "deploy": "gh-pages -d build"
   },
   "author": "Kushagra Chopra",
   "license": "ISC",
@@ -25,6 +24,5 @@
   },
   "devDependencies": {
     "gh-pages": "^3.2.0"
-  },
-  "homepage": "https://kushagrachopra18.github.io/My-Dinner-Pal-React-Prod-Frontend"
+  }
 }
