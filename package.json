@@ -24,5 +24,12 @@
   },
   "devDependencies": {
     "gh-pages": "^3.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kushagrachopra18/My-Dinner-Pal-React-Prod-Frontend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kushagrachopra18/My-Dinner-Pal-React-Prod-Frontend/issues"
   }
 }
