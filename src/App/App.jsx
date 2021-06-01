@@ -33,7 +33,7 @@ export const App = () => {
     </header>
     
     <div class="hero">
-        <img id="main_hero" src="/images/My Dinner Pal Home Image (healthy chicken).png" alt="hero">
+        <img id="main_hero" src={process.env.PUBLIC_URL + "/images/My Dinner Pal Home Image (healthy chicken).png"} alt="hero">
             </img>
         <div id="hero_body">
             <div class="big_title">Is deciding what to cook annoying?</div>
@@ -51,25 +51,25 @@ export const App = () => {
         <h2>Save time in the kitchen and reduce food waste</h2>
         <div class="benefits_panel">
             <div class="benefit">
-                <img class="benefits_icon" src="/images/Time Icon.png" alt="hero"></img>
+                <img class="benefits_icon" src={process.env.PUBLIC_URL + "/images/Time Icon.png"} alt="hero"></img>
                 <h1 class="benefit_header">Save Time</h1>
                 <h2 class="benefit_text"> Don’t waste time worrying about what to eat! We send you meal plans every week
                     to make cooking straightfoward!</h2>
-                <img class="benefit_image" src="/images/(meal plan)My Dinner Pal.png" alt="hero"></img>
+                <img class="benefit_image" src={process.env.PUBLIC_URL + "/images/(meal plan)My Dinner Pal.png"} alt="hero"></img>
             </div>
             <div class="benefit">
-                <img class="benefits_icon" src="/images/No Stress Icon.png" alt="hero"></img>
+                <img class="benefits_icon" src={process.env.PUBLIC_URL + "/images/No Stress Icon.png"} alt="hero"></img>
                 <h1 class="benefit_header">Be Stress Free</h1>
                 <h2 class="benefit_text"> Don’t stress about how to cook delicious food! We only include recipies we’ve
                     tested for quality and ease!</h2>
-                <img class="benefit_image" src="/images/(recipies)My Dinner Pal.png" alt="hero"></img>
+                <img class="benefit_image" src={process.env.PUBLIC_URL + "/images/(recipies)My Dinner Pal.png"} alt="hero"></img>
             </div>
             <div class="benefit">
-                <img class="benefits_icon" src="/images/No Waste Icon.png" alt="hero"></img>
+                <img class="benefits_icon" src={process.env.PUBLIC_URL + "/images/No Waste Icon.png"} alt="hero"></img>
                 <h1 class="benefit_header">Reduce Waste</h1>
                 <h2 class="benefit_text"> Don’t buy things you don’t need at the grocery store! We send you a grocery
                     list every week so you know exactly what you need to buy!</h2>
-                <img class="benefit_image" src="/images/(grocery list)My Dinner Pal (3).png" alt="hero"></img>
+                <img class="benefit_image" src={process.env.PUBLIC_URL + "/images/(grocery list)My Dinner Pal (3).png"} alt="hero"></img>
             </div>
         </div>
     </div>
@@ -161,19 +161,19 @@ export const App = () => {
                 </div>
                 <div class="features_in_plan">
                     <div class="row_flex feature">
-                        <img src="/images/Check Icon.png"></img>
+                        <img src={process.env.PUBLIC_URL + "/images/Check Icon.png"}></img>
                         <h2>Weekly meal plans</h2>
                     </div>
                     <div class="row_flex feature">
-                        <img src="/images/Check Icon.png"></img>
+                        <img src={process.env.PUBLIC_URL + "/images/Check Icon.png"}></img>
                         <h2>Weekly grocery lists</h2>
                     </div>
                     <div class="row_flex feature">
-                        <img src="/images/Check Icon.png"></img>
+                        <img src={process.env.PUBLIC_URL + "/images/Check Icon.png"}></img>
                         <h2>Recipies Included</h2>
                     </div>
                     <div class=" row_flex feature">
-                        <img src="/images/Check Icon.png"></img>
+                        <img src={process.env.PUBLIC_URL + "/images/Check Icon.png"}></img>
                         <h2>Early access to features</h2>
                     </div>
                 </div>

@@ -18,11 +18,11 @@ export const IdeasOnlyPanel = ({annualBilling, onClickFunction}) => {
             </div>
             <div class="features_in_plan">
                 <div class="row_flex feature">
-                    <img src="/images/Check Icon.png"></img>
+                    <img src={process.env.PUBLIC_URL + "/images/Check Icon.png"}></img>
                     <h2>Weekly meal plans</h2>
                 </div>
                 <div class=" row_flex feature">
-                    <img src="/images/Check Icon.png"></img>
+                    <img src={process.env.PUBLIC_URL + "/images/Check Icon.png"}></img>
                     <h2>30 Day Free Trial</h2>
                 </div>
             </div>
