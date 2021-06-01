@@ -62,7 +62,7 @@ export const CheckoutPopup = ({isOpen, closeFunction, plan, billCycle, price, to
     //     }
 
         
-    //     const res = await axios.post('http://localhost:3000/pay', {email: email, first_name: firstName, last_name: lastName});
+    //     const res = await axios.post('https://my-dinner-pal-prod-backend.herokuapp.com/pay', {email: email, first_name: firstName, last_name: lastName});
     //     const clientSecret = await res.data['client_secret'];
     //     console.log(await clientSecret);
     //     const result = await stripe.confirmCardPayment(clientSecret, {
@@ -126,7 +126,7 @@ export const CheckoutPopup = ({isOpen, closeFunction, plan, billCycle, price, to
             console.log(result.error.message);
             return result.error.message;
         }else{
-            const res = await axios.post('http://localhost:3000/sub', {'payment_method': result.paymentMethod.id, 'email': email, 'firstName': firstName, 'lastName': lastName, 'plan': plan, 'billCycle': billCycle});
+            const res = await axios.post('https://my-dinner-pal-prod-backend.herokuapp.com/sub', {'payment_method': result.paymentMethod.id, 'email': email, 'firstName': firstName, 'lastName': lastName, 'plan': plan, 'billCycle': billCycle});
             // eslint-disable-next-line camelcase
             console.log(res);
 
