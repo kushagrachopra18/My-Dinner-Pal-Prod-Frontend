@@ -160,7 +160,6 @@ export const CheckoutPopup = ({isOpen, closeFunction, plan, billCycle, price, to
                 // No additional information was needed
                 // Show a success message to your customer
                 console.log('Payment sucessful');
-                alert(status);
                 return "success";
             } else {
                 //Unexpected status
