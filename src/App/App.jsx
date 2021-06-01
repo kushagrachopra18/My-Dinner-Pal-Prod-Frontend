@@ -190,7 +190,7 @@ export const App = () => {
             <p>(336) 406-8998</p>
         </div>
         <div class="our_story">
-            <img src="/images/Profile Picture.jpeg"></img>
+            <img src={process.env.PUBLIC_URL + "/images/Profile Picture.jpeg"}></img>
             <div class="story_inner">
                 <p class="bold">Our Story</p>
                 <p>My Dinner Pal was founded a busy college student who was sick of fighting the uphill battle of
