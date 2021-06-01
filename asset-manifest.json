@@ -1,23 +1,17 @@
 {
   "files": {
-    "main.css": "/My-Dinner-Pal-React-Prod-Frontend/static/css/main.9d5b29c0.chunk.css",
-    "main.js": "/My-Dinner-Pal-React-Prod-Frontend/static/js/main.96f63843.chunk.js",
-    "main.js.map": "/My-Dinner-Pal-React-Prod-Frontend/static/js/main.96f63843.chunk.js.map",
-    "runtime-main.js": "/My-Dinner-Pal-React-Prod-Frontend/static/js/runtime-main.a70029fd.js",
-    "runtime-main.js.map": "/My-Dinner-Pal-React-Prod-Frontend/static/js/runtime-main.a70029fd.js.map",
-    "static/js/2.c327a5f8.chunk.js": "/My-Dinner-Pal-React-Prod-Frontend/static/js/2.c327a5f8.chunk.js",
-    "static/js/2.c327a5f8.chunk.js.map": "/My-Dinner-Pal-React-Prod-Frontend/static/js/2.c327a5f8.chunk.js.map",
-    "static/js/3.ebd94a99.chunk.js": "/My-Dinner-Pal-React-Prod-Frontend/static/js/3.ebd94a99.chunk.js",
-    "static/js/3.ebd94a99.chunk.js.map": "/My-Dinner-Pal-React-Prod-Frontend/static/js/3.ebd94a99.chunk.js.map",
+    "main.js": "/My-Dinner-Pal-React-Prod-Frontend/static/js/main.56c7f62b.chunk.js",
+    "main.js.map": "/My-Dinner-Pal-React-Prod-Frontend/static/js/main.56c7f62b.chunk.js.map",
+    "runtime-main.js": "/My-Dinner-Pal-React-Prod-Frontend/static/js/runtime-main.bbb6b41c.js",
+    "runtime-main.js.map": "/My-Dinner-Pal-React-Prod-Frontend/static/js/runtime-main.bbb6b41c.js.map",
+    "static/js/2.4e997b38.chunk.js": "/My-Dinner-Pal-React-Prod-Frontend/static/js/2.4e997b38.chunk.js",
+    "static/js/2.4e997b38.chunk.js.map": "/My-Dinner-Pal-React-Prod-Frontend/static/js/2.4e997b38.chunk.js.map",
     "index.html": "/My-Dinner-Pal-React-Prod-Frontend/index.html",
-    "static/css/main.9d5b29c0.chunk.css.map": "/My-Dinner-Pal-React-Prod-Frontend/static/css/main.9d5b29c0.chunk.css.map",
-    "static/js/2.c327a5f8.chunk.js.LICENSE.txt": "/My-Dinner-Pal-React-Prod-Frontend/static/js/2.c327a5f8.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/My-Dinner-Pal-React-Prod-Frontend/static/media/logo.6ce24c58.svg"
+    "static/js/2.4e997b38.chunk.js.LICENSE.txt": "/My-Dinner-Pal-React-Prod-Frontend/static/js/2.4e997b38.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a70029fd.js",
-    "static/js/2.c327a5f8.chunk.js",
-    "static/css/main.9d5b29c0.chunk.css",
-    "static/js/main.96f63843.chunk.js"
+    "static/js/runtime-main.bbb6b41c.js",
+    "static/js/2.4e997b38.chunk.js",
+    "static/js/main.56c7f62b.chunk.js"
   ]
 }
