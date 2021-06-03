@@ -111,8 +111,6 @@ export const CheckoutPopup = ({isOpen, closeFunction, plan, billCycle, price, to
         if(email == ""){
             return "Email Empty";
         }
-
-        console.log("Something ran");
         const result = await stripe.createPaymentMethod({
             type: 'card',
             card: elements.getElement(CardElement),
@@ -121,6 +119,7 @@ export const CheckoutPopup = ({isOpen, closeFunction, plan, billCycle, price, to
                         email: email,
             },
         });
+        console.log("Something ran");
 
         if (result.error) {
             console.log(result.error.message);
