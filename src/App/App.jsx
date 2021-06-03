@@ -8,7 +8,8 @@ import { SuccessPopup } from '../Success Popup';
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 
-const stripePromise = loadStripe("pk_test_51IgxffKIKjam29K6f9DeS6dId7Jbc5KoL2jJ8V9AA9Yj2Bdlzd6QqhBqwtWSOpkcrHO0Aj1HXuAEFS9i1vJD6u2H00iyxq9i6X");
+//Use this key for live data
+const stripePromise = loadStripe("pk_live_51IgxffKIKjam29K6W8nvTk8u20ikPl5oxnJ9U1RR0MjYjXPqnA9lb9BKfmCW9hI4GHAjEikH5KENqoRnefnADeTA00SRjyRFQp");
 
 export const App = () => {
     const [annualCycleSelected, setAnnualCycleSelected] = useState(true);
