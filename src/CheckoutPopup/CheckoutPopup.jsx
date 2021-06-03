@@ -124,45 +124,48 @@ export const CheckoutPopup = ({isOpen, closeFunction, plan, billCycle, price, to
             console.log(result.error.message);
             return result.error.message;
         }else{
-            const res = await axios.post('https://my-dinner-pal-prod-backend.herokuapp.com/sub', {'payment_method': result.paymentMethod.id, 'email': email, 'firstName': firstName, 'lastName': lastName, 'plan': plan, 'billCycle': billCycle});
-            console.log("Something ran");
-            // eslint-disable-next-line camelcase
-            console.log(res);
+            try {
+                const res = await axios.post('https://my-dinner-pal-prod-backend.herokuapp.com/sub', {'payment_method': result.paymentMethod.id, 'email': email, 'firstName': firstName, 'lastName': lastName, 'plan': plan, 'billCycle': billCycle});
+                // eslint-disable-next-line camelcase
+                console.log(res);
 
-            if(res.data.code){
-                console.log('Payment Failed');
-                console.log(res.data.raw.message);
-                return res.data.raw.message;
-            }
+                if(res.data.code){
+                    console.log('Payment Failed');
+                    console.log(res.data.raw.message);
+                    return res.data.raw.message;
+                }
 
-            const {client_secret, status} = res.data;
-            console.log(status);
+                const {client_secret, status} = res.data;
+                console.log(status);
 
-            if (status === 'requires_action') {
-                const cardSetup = await stripe.confirmCardSetup(client_secret).then(function(result) {
-                    console.log(result);
-                    if (result.error) {
-                        // Display error message in your UI.
-                        // The card was declined (i.e. insufficient funds, card has expired, etc)
-                        console.log('There was an issue');
-                        console.log(result.error);
-                        // console.log('Error Message Returned');
-                        return result.error.message;
-                    } else {
-                        // Show a success message to your customer
-                        console.log('Payment sucessful after confirmation');
-                        return "success";
-                    }
-                });
-                return cardSetup;
-            } else if(status === "succeeded") {
-                // No additional information was needed
-                // Show a success message to your customer
-                console.log('Payment sucessful');
-                return "success";
-            } else {
-                //Unexpected status
-                return "Error processing payment. Please try again or use a different card!";
+                if (status === 'requires_action') {
+                    const cardSetup = await stripe.confirmCardSetup(client_secret).then(function(result) {
+                        console.log(result);
+                        if (result.error) {
+                            // Display error message in your UI.
+                            // The card was declined (i.e. insufficient funds, card has expired, etc)
+                            console.log('There was an issue');
+                            console.log(result.error);
+                            // console.log('Error Message Returned');
+                            return result.error.message;
+                        } else {
+                            // Show a success message to your customer
+                            console.log('Payment sucessful after confirmation');
+                            return "success";
+                        }
+                    });
+                    return cardSetup;
+                } else if(status === "succeeded") {
+                    // No additional information was needed
+                    // Show a success message to your customer
+                    console.log('Payment sucessful');
+                    return "success";
+                } else {
+                    //Unexpected status
+                    return "Error processing payment. Please try again or use a different card!";
+                }
+            } catch (err) {
+                console.log(err);
             }
         }
   };
