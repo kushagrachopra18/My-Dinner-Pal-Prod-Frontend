@@ -25,9 +25,9 @@ export const App = () => {
             <a href="#">
                 <img src={process.env.PUBLIC_URL + "/images/My Dinner Pal Mustache Logo.png"} alt="Site Name"></img>
             </a>
-            {/* <h1>
+            <h1>
                 <href href="#" id="nav_header">My Dinner Pal</href>
-            </h1> */}
+            </h1>
         </div>
         <a class="header_buttion" href="#pricing_panel_selector">Try 30 Days Free!</a>
     </header>
