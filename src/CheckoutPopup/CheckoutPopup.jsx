@@ -187,6 +187,7 @@ export const CheckoutPopup = ({isOpen, closeFunction, plan, billCycle, price, to
                     <p>➔ After 30 days you will be billed {price}/{billCycle}</p>
                 </div>
                 <form onSubmit={async () => {
+                    event.preventDefault();
                     setProcessing(true);
                     const result = await handleSubmitSub();
                     setProcessing(false);
