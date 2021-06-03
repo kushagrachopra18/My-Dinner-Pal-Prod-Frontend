@@ -119,13 +119,13 @@ export const CheckoutPopup = ({isOpen, closeFunction, plan, billCycle, price, to
                         email: email,
             },
         });
-        console.log("Something ran");
 
         if (result.error) {
             console.log(result.error.message);
             return result.error.message;
         }else{
             const res = await axios.post('https://my-dinner-pal-prod-backend.herokuapp.com/sub', {'payment_method': result.paymentMethod.id, 'email': email, 'firstName': firstName, 'lastName': lastName, 'plan': plan, 'billCycle': billCycle});
+            console.log("Something ran");
             // eslint-disable-next-line camelcase
             console.log(res);
 
