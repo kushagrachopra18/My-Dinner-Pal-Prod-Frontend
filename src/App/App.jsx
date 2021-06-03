@@ -23,7 +23,7 @@ export const App = () => {
     <header class="site-header">
         <div class="site-identity">
             <a href="#">
-                <img src={process.env.PUBLIC_URL + "/images/My Dinner Pal Mustache Logo.png"} alt="Site Name"></img>
+                <img src={process.env.PUBLIC_URL + "/images/My Dinner Pal Mustache Logo (Curved Title).png"} alt="Site Name"></img>
             </a>
             <h1>
                 <href href="#" id="nav_header">My Dinner Pal</href>
