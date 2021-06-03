@@ -4,7 +4,7 @@ export const IdeasOnlyPanel = ({annualBilling, onClickFunction}) => {
     let billString = "Monthly";
     let price = "$1.99";
     if(annualBilling){
-        billString = "Annual";
+        billString = "Annually";
         price = "$1.59";
     }
 

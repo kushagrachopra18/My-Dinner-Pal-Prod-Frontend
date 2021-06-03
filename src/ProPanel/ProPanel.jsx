@@ -4,7 +4,7 @@ export const ProPanel = ({annualBilling, onClickFunction}) => {
     let billString = "Monthly";
     let price = "$4.99";
     if(annualBilling){
-        billString = "Annual";
+        billString = "Annually";
         price = "$3.99";
     }
 
