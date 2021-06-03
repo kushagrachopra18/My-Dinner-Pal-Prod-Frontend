@@ -96,6 +96,7 @@ export const CheckoutPopup = ({isOpen, closeFunction, plan, billCycle, price, to
 // !!!!!!!!!When you're not doing the free trial this whole function and the backend function need to change!!!!!!!!!
 // Look at this for an example https://github.com/Vuka951/tutorial-code/blob/master/react-express-stripe/subscription/react-app/src/components/HomePage.js
     const handleSubmitSub = async (event) => {
+        console.log("Something ran");
         if (!stripe || !elements) {
             // Stripe.js has not yet loaded.
             // Make sure to disable form submission until Stripe.js has loaded.
@@ -184,7 +185,6 @@ export const CheckoutPopup = ({isOpen, closeFunction, plan, billCycle, price, to
                     <p>➔ After 30 days you will be billed {price}/{billCycle}</p>
                 </div>
                 <form onSubmit={async () => {
-                    console.log("processing");
                     setProcessing(true);
                     const result = await handleSubmitSub();
                     setProcessing(false);
