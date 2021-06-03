@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://kushagrachopra18.github.io/My-Dinner-Pal-React-Prod-Frontend",
+  "homepage": "https://mydinnerpal.com",
   "private": true,
   "dependencies": {
     "@stripe/react-stripe-js": "^1.4.1",
