@@ -166,7 +166,7 @@ export const CheckoutPopup = ({isOpen, closeFunction, plan, billCycle, price, to
                 }
             } catch (err) {
                 console.log(err);
-                alert();
+                return "Error processing payment. Please try again or use a different card!";
             }
         }
   };
