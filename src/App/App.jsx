@@ -186,7 +186,7 @@ export const App = () => {
             <p>© My Dinner Pal LLC</p>
             <p>Please contact us with any questions or conscerns!</p>
             <p>To upgrade or cancel your subscription just send us an email and we will take care of it promptly!</p>
-            <p>mydinnerpal@gmail.com </p>
+            <p>mydinnerpal@gmail.com</p>
             <p>(336) 406-8998</p>
         </div>
         <div class="our_story">
