@@ -186,7 +186,27 @@ export const CheckoutPopup = ({isOpen, closeFunction, plan, billCycle, price, to
                     <p>➔ Subscribing to <span class="bold">{plan}</span></p>
                     <p>➔ After 30 days you will be billed {price}/{billCycle}</p>
                 </div>
-                <form>
+                <form
+                    onSubmit={async (event) => {
+                            event.preventDefault();
+                            setProcessing(true);
+                            const result = await handleSubmitSub();
+                            setProcessing(false);
+                            if(result === "success"){
+                                // console.log("if ran");
+                                toSuccessFunction();
+                                setFirstName('');
+                                setLastName('');
+                                setEmail('');
+                                setErrorMessage('');
+                            }else{
+                                // console.log(result);
+                                // console.log('else ran. result value- '+result);
+                                // alert(result);
+                                setErrorMessage(result);
+                            }
+                        }}
+                >
                     <label>
                         First Name
                         <input 
@@ -217,25 +237,7 @@ export const CheckoutPopup = ({isOpen, closeFunction, plan, billCycle, price, to
                     <CardSection />
                     <button 
                         id="checkout_button" 
-                        disabled={!stripe || processing}
-                        onClick={async () => {
-                            setProcessing(true);
-                            const result = await handleSubmitSub();
-                            setProcessing(false);
-                            if(result === "success"){
-                                // console.log("if ran");
-                                toSuccessFunction();
-                                setFirstName('');
-                                setLastName('');
-                                setEmail('');
-                                setErrorMessage('');
-                            }else{
-                                // console.log(result);
-                                // console.log('else ran. result value- '+result);
-                                // alert(result);
-                                setErrorMessage(result);
-                            }
-                        }}    
+                        disabled={!stripe || processing}    
                     >
                         {checkoutText} 
                     </button>
