@@ -215,8 +215,9 @@ export const CheckoutPopup = ({isOpen, closeFunction, plan, billCycle, price, to
                         />
                     </label>
                     <CardSection />
-                    <button id="checkout_button" disabled={!stripe || processing}>
-                        {checkoutText}
+                    <button 
+                        id="checkout_button" 
+                        disabled={!stripe || processing}
                         onClick={async () => {
                             setProcessing(true);
                             const result = await handleSubmitSub();
@@ -234,7 +235,9 @@ export const CheckoutPopup = ({isOpen, closeFunction, plan, billCycle, price, to
                                 // alert(result);
                                 setErrorMessage(result);
                             }
-                        }}
+                        }}    
+                    >
+                        {checkoutText} 
                     </button>
                     <p className="error_message">{errorMessage}</p>
                 </form>
