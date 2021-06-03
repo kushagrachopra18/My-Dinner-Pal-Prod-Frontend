@@ -194,11 +194,15 @@ export const App = () => {
             <img src={process.env.PUBLIC_URL + "/images/Profile Picture.jpeg"}></img>
             <div class="story_inner">
                 <p class="bold">Our Story</p>
-                <p>My Dinner Pal was founded a busy college student who was sick of fighting the uphill battle of
-                    finding semi-healthy delicious meals to cook. Kushagra Chopra personally struggled with his health
-                    and finding the help and resources to improve his life was difficult. Through finding and pursuing
-                    healthy eating, he ultimately ended up losing 40 pounds. Ever since then, he’s focused on making
-                    delicious semi-healthy eating easy and convenient for others.</p>
+                <p>My Dinner Pal was founded by a busy college student who was desperate to incorporate 
+                    delicious healthy meals into his week. Living on his own for the first time, Kushagra 
+                    Chopra personally struggled to find time to make quality food during the week and found 
+                    himself unnecessarily throwing out excess food that he bought from the grocery store. 
+                    Through some planning and experimentation he was able to design the perfect system for 
+                    busy people to be able to enjoy delicious food during the week without having to waste 
+                    time thinking about what to buy, cook, and how to make it. Ever since then, he’s been 
+                    focused on making delicious healthy eating easy for others.
+                </p>
             </div>
         </div>
     </div>
