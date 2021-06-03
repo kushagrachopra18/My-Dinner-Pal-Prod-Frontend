@@ -166,6 +166,7 @@ export const CheckoutPopup = ({isOpen, closeFunction, plan, billCycle, price, to
                 }
             } catch (err) {
                 console.log(err);
+                alert();
             }
         }
   };
