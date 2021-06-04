@@ -56,21 +56,21 @@ export const App = () => {
                 <h1 class="benefit_header">Save Time</h1>
                 <h2 class="benefit_text"> Don’t waste time worrying about what to eat! We send you meal plans every week
                     to make cooking straightfoward!</h2>
-                <img class="benefit_image" src={process.env.PUBLIC_URL + "/images/(meal plan)My Dinner Pal.png"} alt="hero"></img>
+                <img class="benefit_image" src={process.env.PUBLIC_URL + "/images/My Dinner Pal Meal Plan Updated(meal plan).png"} alt="hero"></img>
             </div>
             <div class="benefit">
                 <img class="benefits_icon" src={process.env.PUBLIC_URL + "/images/No Stress Icon.png"} alt="hero"></img>
                 <h1 class="benefit_header">Be Stress Free</h1>
                 <h2 class="benefit_text"> Don’t stress about how to cook delicious food! We only include recipies we’ve
                     tested for quality and ease!</h2>
-                <img class="benefit_image" src={process.env.PUBLIC_URL + "/images/(recipies)My Dinner Pal.png"} alt="hero"></img>
+                <img class="benefit_image" src={process.env.PUBLIC_URL + "/images/My Dinner Pal Meal Plan Updated(Recipies).png"} alt="hero"></img>
             </div>
             <div class="benefit">
                 <img class="benefits_icon" src={process.env.PUBLIC_URL + "/images/No Waste Icon.png"} alt="hero"></img>
                 <h1 class="benefit_header">Reduce Waste</h1>
                 <h2 class="benefit_text"> Don’t buy things you don’t need at the grocery store! We send you a grocery
                     list every week so you know exactly what you need to buy!</h2>
-                <img class="benefit_image" src={process.env.PUBLIC_URL + "/images/(grocery list)My Dinner Pal (3).png"} alt="hero"></img>
+                <img class="benefit_image" src={process.env.PUBLIC_URL + "/images/My Dinner Pal Meal Plan Updated(Grocery List).png"} alt="hero"></img>
             </div>
         </div>
     </div>
