@@ -16,7 +16,7 @@ export const SuccessPopup = ({isOpen, closeFunction}) => {
                          not recieve an email from us in the next 10 minutes or if you have any questions please
                          send us an email!
                 </div>
-                <a href="mailto:kushagrachopra16@gmail.com" target="_blank" class="try_free_button">Email Us</a>
+                <a href="mailto:support@mydinnerpal.com" target="_blank" class="try_free_button">Email Us</a>
             </div>
         </>);
     }

@@ -178,7 +178,7 @@ export const App = () => {
                         <h2>Early access to features</h2>
                     </div>
                 </div>
-                <a href="mailto:kushagrachopra16@gmail.com" target="_blank" class="try_free_button">Email Us</a>
+                <a href="mailto:support@mydinnerpal.com" target="_blank" class="try_free_button">Email Us</a>
             </div>
         </div>
     </div>
@@ -187,7 +187,7 @@ export const App = () => {
             <p>© My Dinner Pal LLC</p>
             <p>Please contact us with any questions or conscerns!</p>
             <p>To upgrade or cancel your subscription just send us an email and we will take care of it promptly!</p>
-            <p>mydinnerpal@gmail.com</p>
+            <p>support@mydinnerpal.com</p>
             <p>(336) 406-8998</p>
         </div>
         <div class="our_story">
