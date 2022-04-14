@@ -1,231 +1,146 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-import { BillCycleSelector } from '../BillCycleSelector';
-import { IdeasOnlyPanel } from '../IdeasOnlyPanel';
-import { ProPanel } from '../ProPanel';
-import { CheckoutPopup } from '../CheckoutPopup';
-import { SuccessPopup } from '../Success Popup';
-import {Elements} from '@stripe/react-stripe-js';
-import {loadStripe} from '@stripe/stripe-js';
+import React, { useEffect, useState } from 'react';
+import { LogInPopup } from '../LogInPopup';
+import { Home } from '../Home';
+import { MyAccount } from '../MyAccount';
+import { PrivateRoute } from '../PrivateRoute';
+import { ResetPasswordPopup } from '../ResetPasswordPopup';
+import { ResetPasswordPage } from '../ResetPasswordPage';
+import axios from 'axios';
 
-//Use this key for live data
-const stripePromise = loadStripe("pk_live_51IgxffKIKjam29K6W8nvTk8u20ikPl5oxnJ9U1RR0MjYjXPqnA9lb9BKfmCW9hI4GHAjEikH5KENqoRnefnADeTA00SRjyRFQp");
+import { Route, BrowserRouter as Router, Routes, Link, Navigate} from "react-router-dom";
 
 export const App = () => {
-    const [annualCycleSelected, setAnnualCycleSelected] = useState(true);
-    const [checkoutOpen, setCheckoutOpen] = useState(false);
-    const [successOpen, setSucessOpen] = useState(false);
+    const [loginOpen, setLoginOpen] = useState(false);
+    const [loginStatus, setLoginStatus] = useState(false);
+    const [validatingToken, setValidatingToken] = useState(true);
 
-    const [plan, setPlan] = useState('');
-    const [billCycle, setBillCycle] = useState('');
-    const [price, setPrice] = useState('');
+    const [resetPasswordOpen, setResetPasswordOpen] = useState(false);
+
+    let validateToken = async () => {
+        console.log('ran');
+        if(localStorage.getItem('token')){
+            setValidatingToken(true);
+            try {
+                const res = await axios.get('https://my-dinner-pal-prod-backend.herokuapp.com/getUserInfo', {
+                    'headers': {
+                        'x-access-token': localStorage.getItem('token')
+                    }
+                }); 
+                // const res = {'data': {
+                //     'auth': false
+                // }};
+                if(res.data.auth == true){
+                    setLoginStatus(true);
+                    localStorage.setItem('user', JSON.stringify(res.data.user));
+                    // localStorage.setItem('test','test');
+                } else {
+                    setLoginStatus(false);
+                }
+            } catch (error) {
+                console.log(error);
+                setLoginStatus(false);
+            }
+        }
+        setValidatingToken(false);
+    }
+    useEffect(() => {
+        validateToken();
+    }, []);
+
+    let setNavButtons = (loginStatus) => {
+        if(loginStatus){
+            return (<>
+                <a onClick={() => {
+                            localStorage.clear();
+                            validateToken();
+                            window.location.reload(false);
+                        }} class="header_buttion log_in_button">Sign out</a>
+                <Link to="/account" class="header_buttion">My Account</Link>
+            </>);
+        }
+        return (<>
+            <a onClick={() => {setLoginOpen(true)}} class="header_buttion log_in_button">Log in</a>
+            <a class="header_buttion" href="#pricing_panel_selector">Sign up / Try FREE</a>
+        </>);
+    }
 
     return (<>
+    <Router>
+    <div class="main_page_wrapper">
     <header class="site-header">
-        <div class="site-identity">
-            <a href="#">
-                <img src={process.env.PUBLIC_URL + "/images/My Dinner Pal Mustache Logo.png"} alt="Site Name"></img>
-            </a>
-            <h1>
-                <href href="#" id="nav_header">My Dinner Pal</href>
-            </h1>
+        <Link to="/" class="site-identity">
+                <img src="/images/My Dinner Pal Mustache Logo.png" alt="My Dinner Pal Logo"></img>
+                <h1>
+                    <href id="nav_header">My Dinner Pal</href>
+                </h1>
+        </Link>
+        <div class="header_button_wrapper">
+           {setNavButtons(loginStatus)}
         </div>
-        <a class="header_buttion" href="#pricing_panel_selector">Try 30 Days Free!</a>
     </header>
-    
-    <div class="hero">
-        <img id="main_hero" src={process.env.PUBLIC_URL + "/images/My Dinner Pal Home Image (healthy chicken).png"} alt="hero">
-            </img>
-        <div id="hero_body">
-            <div class="big_title">Is deciding what to cook annoying?</div>
-            <p class="big_subtitle">We make weekday cooking stress free by sending you an easy meal plan and grocery
-                list every week! </p>
-            <a class="hero_button" href="#pricing_panel_selector">
-                <h2>Try 30 days FREE</h2>
-                <i class="arrow right"></i>
-            </a>
-        </div>
-    </div>
 
-    <div class="features_panel">
-        <h1 class="features_header">Never worry about what to cook again!</h1>
-        <h2>Save time in the kitchen and reduce food waste</h2>
-        <div class="benefits_panel">
-            <div class="benefit">
-                <img class="benefits_icon" src={process.env.PUBLIC_URL + "/images/Time Icon.png"} alt="hero"></img>
-                <h1 class="benefit_header">Save Time</h1>
-                <h2 class="benefit_text"> Don’t waste time worrying about what to eat! We send you meal plans every week
-                    to make cooking straightfoward!</h2>
-                <img class="benefit_image" src={process.env.PUBLIC_URL + "/images/My Dinner Pal Meal Plan Updated(meal plan).png"} alt="hero"></img>
-            </div>
-            <div class="benefit">
-                <img class="benefits_icon" src={process.env.PUBLIC_URL + "/images/No Stress Icon.png"} alt="hero"></img>
-                <h1 class="benefit_header">Be Stress Free</h1>
-                <h2 class="benefit_text"> Don’t stress about how to cook delicious food! We only include recipies we’ve
-                    tested for quality and ease!</h2>
-                <img class="benefit_image" src={process.env.PUBLIC_URL + "/images/My Dinner Pal Meal Plan Updated (Recipies).png"} alt="hero"></img>
-            </div>
-            <div class="benefit">
-                <img class="benefits_icon" src={process.env.PUBLIC_URL + "/images/No Waste Icon.png"} alt="hero"></img>
-                <h1 class="benefit_header">Reduce Waste</h1>
-                <h2 class="benefit_text"> Don’t buy things you don’t need at the grocery store! We send you a grocery
-                    list every week so you know exactly what you need to buy!</h2>
-                <img class="benefit_image" src={process.env.PUBLIC_URL + "/images/My Dinner Pal Meal Plan Updated (Grocery List).png"} alt="hero"></img>
-            </div>
-        </div>
-    </div>
-
-    <div class="levels_panel">
-        <h1 class="levels_header">Made for busy people who like good food!</h1>
-        <h2 class="levels_subheader">Perfect for off campus college students and young professionals</h2>
-        <div class="levels_wrapper">
-            <div class="level_box">
-                <h1 class="level_title">How delicious will the food be?</h1>
-                <div class="level_inner_wrapper">
-                    <h2 class="level_end_label">Way too "healthy"</h2>
-                    <div class="level_range">
-                        <div id="taste_level"></div>
-                    </div>
-                    <h2 class="level_end_label">The best food ever</h2>
-                </div>
-            </div>
-            <div class="level_box">
-                <h1 class="level_title">How healthy will this make me?</h1>
-                <div class="level_inner_wrapper">
-                    <h2 class="level_end_label">I never want abs</h2>
-                    <div class="level_range">
-                        <div id="health_level"></div>
-                    </div>
-                    <h2 class="level_end_label">Fitness Guru</h2>
-                </div>
-            </div>
-            <div class="level_box">
-                <h1 class="level_title">How easy will the recipies be?</h1>
-                <div class="level_inner_wrapper">
-                    <h2 class="level_end_label">Gordon Ramsay</h2>
-                    <div class="level_range">
-                        <div id="ease_level"></div>
-                    </div>
-                    <h2 class="level_end_label">What is cooking?</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="pricing_panel" id="pricing_panel_selector">
-        <h1 class="short_title">Try free for 30 Days!</h1>
-        <h2 class="short_subtitle">No risk! If we aren’t able to make your life easier in the next month just
-            cancel! No hard feelings!
-        </h2>
-        <BillCycleSelector 
-            isOn={annualCycleSelected}
-            handleToggle={() => setAnnualCycleSelected(!annualCycleSelected)}
+    <Routes>
+        <Route path="*" to="/" element={<Navigate to="/" replace />} />
+        <Route path="/" 
+            element={<Home
+                openLogIn={()=>{
+                    setLoginOpen(true);
+                }}
+            />} 
+        
         />
-        <div class="pricing_plans_container">
-            <IdeasOnlyPanel
-                annualBilling={annualCycleSelected}
-                onClickFunction={
-                    () => {
-                        setCheckoutOpen(true)
-                        setPlan("Ideas Only");
-                        if(annualCycleSelected){
-                            setBillCycle("year");
-                            setPrice("$19.08");
-                        }else{
-                            setBillCycle("month");
-                            setPrice("$1.99");
-                        }
-                    }
-                }
-            />
-            <ProPanel
-                annualBilling={annualCycleSelected}
-                onClickFunction={
-                    () => {
-                        setCheckoutOpen(true)
-                        setPlan("Pro");
-                        if(annualCycleSelected){
-                            setBillCycle("year");
-                            setPrice("$47.88");
-                        }else{
-                            setBillCycle("month");
-                            setPrice("$4.99");
-                        }
-                    }
-                }
-            />
-            <div class="pricing_plan beta_plan">
-                <h1>Beta Tester</h1>
-                <p>Want to help us make cooking easy? Send us an email to become an early access beta tester!</p>
-                <div class="price_wrapper">
-                    <h1 class="price">Special Pricing</h1>
-                </div>
-                <div class="features_in_plan">
-                    <div class="row_flex feature">
-                        <img src={process.env.PUBLIC_URL + "/images/Check Icon.png"}></img>
-                        <h2>Weekly meal plans</h2>
-                    </div>
-                    <div class="row_flex feature">
-                        <img src={process.env.PUBLIC_URL + "/images/Check Icon.png"}></img>
-                        <h2>Weekly grocery lists</h2>
-                    </div>
-                    <div class="row_flex feature">
-                        <img src={process.env.PUBLIC_URL + "/images/Check Icon.png"}></img>
-                        <h2>Recipies Included</h2>
-                    </div>
-                    <div class=" row_flex feature">
-                        <img src={process.env.PUBLIC_URL + "/images/Check Icon.png"}></img>
-                        <h2>Early access to features</h2>
-                    </div>
-                </div>
-                <a href="mailto:support@mydinnerpal.com" target="_blank" class="try_free_button">Email Us</a>
-            </div>
-        </div>
+        <Route 
+            path='/account' 
+            element={
+                <PrivateRoute
+                validatingToken={validatingToken}    
+                loginStatus={loginStatus}
+                >
+                    <MyAccount
+                        validateToken={validateToken}
+                    />
+                </PrivateRoute>
+            } 
+        />
+        <Route path="/reset_password" 
+            element={<ResetPasswordPage
+            validateToken={validateToken}
+                loginStatus={loginStatus}
+            />} 
+        />
+    </Routes>
     </div>
     <div class="footer">
         <div class="footer_info">
-            <p>© My Dinner Pal LLC</p>
+            <p>© 2022 by My Dinner Pal LLC</p>
             <p>Please contact us with any questions or conscerns!</p>
             <p>To upgrade or cancel your subscription just send us an email and we will take care of it promptly!</p>
             <p>support@mydinnerpal.com</p>
             <p>(336) 406-8998</p>
         </div>
-        <div class="our_story">
-            <img src={process.env.PUBLIC_URL + "/images/Profile Picture.jpeg"}></img>
-            <div class="story_inner">
-                <p class="bold">Our Story</p>
-                <p>My Dinner Pal was founded by a busy college student who was desperate to incorporate 
-                    delicious healthy meals into his week. Living on his own for the first time, Kushagra 
-                    Chopra personally struggled to find time to make quality food during the week and found 
-                    himself unnecessarily throwing out excess food that he bought from the grocery store. 
-                    Through some planning and experimentation he was able to design the perfect system for 
-                    busy people to be able to enjoy delicious food during the week without having to waste 
-                    time thinking about what to buy, cook, and how to make it. Ever since then, he’s been 
-                    focused on making delicious healthy eating easy for others.
-                </p>
-            </div>
-        </div>
     </div>
-    <Elements stripe={stripePromise}>
-        <CheckoutPopup
-            isOpen={checkoutOpen}
-            closeFunction={() => {
-                setCheckoutOpen(false);
-            }}
-            plan={plan}
-            billCycle={billCycle}
-            price={price}
-            toSuccessFunction={() => {
-                setCheckoutOpen(false);
-                setSucessOpen(true);
-            }}
-        />
-    </Elements>
-    <SuccessPopup
-        isOpen={successOpen}
+
+    <LogInPopup
+        isOpen={loginOpen}
         closeFunction={() => {
-            setSucessOpen(false);
+            setLoginOpen(false);
+        }}
+        setLoginStatus = {setLoginStatus}
+        toResetPasswordFunction={() => {
+            setLoginOpen(false);
+            setResetPasswordOpen(true);
         }}
     />
+    <ResetPasswordPopup
+         isOpen={resetPasswordOpen}
+         closeFunction={() => {
+             setResetPasswordOpen(false);
+         }}
+         toLoginFunction={() => {
+            setResetPasswordOpen(false);
+            setLoginOpen(true);
+        }}
+    />
+    </Router>
     </>)
 };
