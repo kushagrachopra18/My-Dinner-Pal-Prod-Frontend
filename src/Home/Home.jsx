@@ -11,7 +11,7 @@ import {loadStripe} from '@stripe/stripe-js';
 //Use this key for live data
 const stripePromise = loadStripe("pk_live_51IgxffKIKjam29K6W8nvTk8u20ikPl5oxnJ9U1RR0MjYjXPqnA9lb9BKfmCW9hI4GHAjEikH5KENqoRnefnADeTA00SRjyRFQp");
 
-export const Home = ({openLogIn, pricingPanelRef}) => {
+export const Home = ({pricingPanelRef, openCreateAccountPopup}) => {
     const [annualCycleSelected, setAnnualCycleSelected] = useState(true);
     const [checkoutOpen, setCheckoutOpen] = useState(false);
     const [successOpen, setSucessOpen] = useState(false);
@@ -165,7 +165,7 @@ export const Home = ({openLogIn, pricingPanelRef}) => {
                             <h2>Early access to features</h2>
                         </div>
                     </div>
-                    <button onClick={()=>{setCreateAccountOpen(true);}} class="try_free_button">Sign Up</button>
+                    <button onClick={()=>{openCreateAccountPopup();}} class="try_free_button">Sign Up</button>
                 </div>
             </div>
         </div>
@@ -213,16 +213,6 @@ export const Home = ({openLogIn, pricingPanelRef}) => {
             isOpen={successOpen}
             closeFunction={() => {
                 setSucessOpen(false);
-            }}
-        />
-        <CreateAccountPopup
-            isOpen={createAccountOpen}
-            toLogIn={()=>{
-                setCreateAccountOpen(false);
-                openLogIn();
-            }}
-            closeFunction={() => {
-                setCreateAccountOpen(false)
             }}
         />
     </>);

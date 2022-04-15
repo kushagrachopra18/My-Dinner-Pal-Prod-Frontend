@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 
-export const CreateAccountPopup = ({isOpen, closeFunction, toLogIn}) => {
+export const CreateAccountPopup = ({isOpen, closeFunction, toLogIn, toSuccessPopup, validateToken}) => {
     let [processing, setProcessing] = useState(false);
     
     const [email, setEmail] = useState('');
@@ -66,8 +66,8 @@ export const CreateAccountPopup = ({isOpen, closeFunction, toLogIn}) => {
                             setConfirmPassword('');
                             setAccessCode('');
                             setErrorMessage('');
-                            closeFunction();
-                            window.location.reload(false);
+                            await validateToken();
+                            toSuccessPopup();
                         } else {
                             console.log(res.data);
                             setErrorMessage(res.data.message);

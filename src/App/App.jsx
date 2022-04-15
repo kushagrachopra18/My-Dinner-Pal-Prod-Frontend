@@ -5,6 +5,8 @@ import { MyAccount } from '../MyAccount';
 import { PrivateRoute } from '../PrivateRoute';
 import { ResetPasswordPopup } from '../ResetPasswordPopup';
 import { ResetPasswordPage } from '../ResetPasswordPage';
+import { CreateAccountPopup } from '../CreateAccountPopup';
+import { BetaTesterSuccessPopup } from '../BetaTesterSuccessPopup';
 import axios from 'axios';
 
 import { Route, HashRouter as Router, Routes, Link, Navigate} from "react-router-dom";
@@ -13,6 +15,9 @@ export const App = () => {
     const [loginOpen, setLoginOpen] = useState(false);
     const [loginStatus, setLoginStatus] = useState(false);
     const [validatingToken, setValidatingToken] = useState(true);
+
+    const [createAccountOpen, setCreateAccountOpen] = useState(false);
+    const [betaTesterSuccessOpen, setBetaTesterSuccessOpen] = useState(false);
 
     const [resetPasswordOpen, setResetPasswordOpen] = useState(false);
 
@@ -87,10 +92,10 @@ export const App = () => {
         <Route path="*" to="/" element={<Navigate to="/" replace />} />
         <Route path="/" 
             element={<Home
-                openLogIn={()=>{
-                    setLoginOpen(true);
-                }}
                 pricingPanelRef={pricingPanelRef}
+                openCreateAccountPopup={() => {
+                    setCreateAccountOpen(true)
+                }}
             />} 
         
         />
@@ -135,6 +140,7 @@ export const App = () => {
             setLoginOpen(false);
             setResetPasswordOpen(true);
         }}
+        validateToken={validateToken}
     />
     <ResetPasswordPopup
          isOpen={resetPasswordOpen}
@@ -144,6 +150,27 @@ export const App = () => {
          toLoginFunction={() => {
             setResetPasswordOpen(false);
             setLoginOpen(true);
+        }}
+    />
+    <CreateAccountPopup
+        isOpen={createAccountOpen}
+        toLogIn={()=>{
+            setCreateAccountOpen(false);
+            setLoginOpen(true);
+        }}
+        closeFunction={() => {
+            setCreateAccountOpen(false);
+        }}
+        toSuccessPopup={()=>{
+            setCreateAccountOpen(false);
+            setBetaTesterSuccessOpen(true);
+        }}
+        validateToken={validateToken}
+    />
+    <BetaTesterSuccessPopup
+        isOpen={betaTesterSuccessOpen}
+        closeFunction={() => {
+            setBetaTesterSuccessOpen(false);
         }}
     />
     </Router>

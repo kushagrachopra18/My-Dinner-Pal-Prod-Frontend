@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { motion } from 'framer-motion';
 
-export const LogInPopup = ({isOpen, closeFunction, setLoginStatus, toResetPasswordFunction}) => {
+export const LogInPopup = ({isOpen, closeFunction, setLoginStatus, toResetPasswordFunction, validateToken}) => {
     let [processing, setProcessing] = useState(false);
     
+    const navigateTo = useNavigate();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -57,7 +60,8 @@ export const LogInPopup = ({isOpen, closeFunction, setLoginStatus, toResetPasswo
                             setErrorMessage('');
                             closeFunction();
                             setLoginStatus(true);
-                            window.location.reload(false);
+                            await validateToken();
+                            navigateTo("/account");
                         } else {
                             console.log(res.data);
                             setErrorMessage(res.data.message);
