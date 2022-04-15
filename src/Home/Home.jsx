@@ -11,7 +11,7 @@ import {loadStripe} from '@stripe/stripe-js';
 //Use this key for live data
 const stripePromise = loadStripe("pk_live_51IgxffKIKjam29K6W8nvTk8u20ikPl5oxnJ9U1RR0MjYjXPqnA9lb9BKfmCW9hI4GHAjEikH5KENqoRnefnADeTA00SRjyRFQp");
 
-export const Home = ({openLogIn}) => {
+export const Home = ({openLogIn, pricingPanelRef}) => {
     const [annualCycleSelected, setAnnualCycleSelected] = useState(true);
     const [checkoutOpen, setCheckoutOpen] = useState(false);
     const [successOpen, setSucessOpen] = useState(false);
@@ -27,7 +27,9 @@ export const Home = ({openLogIn}) => {
                 <div class="big_title">Is deciding what to cook annoying?</div>
                 <p class="big_subtitle">We make weekday cooking stress free by sending you an easy meal plan and grocery
                     list every week! </p>
-                <a class="header_buttion hero_button" href="#pricing_panel_selector">Sign up / Try FREE</a>
+                <a class="header_buttion hero_button" onClick={()=>{
+                    pricingPanelRef.current.scrollIntoView({ behavior: 'smooth' })
+                }}>Sign up / Try FREE</a>
             </div>
             <img id="main_hero" src="/images/mushroom_risotto.jpg" alt="hero"></img>
         </div>
@@ -97,7 +99,7 @@ export const Home = ({openLogIn}) => {
             </div>
         </div>
 
-        <div class="pricing_panel" id="pricing_panel_selector">
+        <div class="pricing_panel" id="pricing_panel_selector" ref={pricingPanelRef}>
             <h1 class="short_title">Try free for 30 Days!</h1>
             <h2 class="short_subtitle">No risk! If we aren’t able to make your life easier in the next month just
                 cancel! No hard feelings!

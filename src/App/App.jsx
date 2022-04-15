@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { LogInPopup } from '../LogInPopup';
 import { Home } from '../Home';
 import { MyAccount } from '../MyAccount';
@@ -7,7 +7,7 @@ import { ResetPasswordPopup } from '../ResetPasswordPopup';
 import { ResetPasswordPage } from '../ResetPasswordPage';
 import axios from 'axios';
 
-import { Route, BrowserRouter as Router, Routes, Link, Navigate} from "react-router-dom";
+import { Route, HashRouter as Router, Routes, Link, Navigate} from "react-router-dom";
 
 export const App = () => {
     const [loginOpen, setLoginOpen] = useState(false);
@@ -15,6 +15,8 @@ export const App = () => {
     const [validatingToken, setValidatingToken] = useState(true);
 
     const [resetPasswordOpen, setResetPasswordOpen] = useState(false);
+
+    let pricingPanelRef = useRef();
 
     let validateToken = async () => {
         console.log('ran');
@@ -60,7 +62,9 @@ export const App = () => {
         }
         return (<>
             <a onClick={() => {setLoginOpen(true)}} class="header_buttion log_in_button">Log in</a>
-            <a class="header_buttion" href="#pricing_panel_selector">Sign up / Try FREE</a>
+            <a class="header_buttion" onClick={()=>{
+                pricingPanelRef.current.scrollIntoView({ behavior: 'smooth' })
+            }}>Sign up / Try FREE</a>
         </>);
     }
 
@@ -86,6 +90,7 @@ export const App = () => {
                 openLogIn={()=>{
                     setLoginOpen(true);
                 }}
+                pricingPanelRef={pricingPanelRef}
             />} 
         
         />
