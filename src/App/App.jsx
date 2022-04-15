@@ -71,7 +71,7 @@ export const App = () => {
     return (<>
     <Router>
     <div class="main_page_wrapper">
-    <header class="site-header">
+    <header class="site-header" style={{left:0}}>
         <Link to="/" class="site-identity">
                 <img src="/images/My Dinner Pal Mustache Logo.png" alt="My Dinner Pal Logo"></img>
                 <h1>

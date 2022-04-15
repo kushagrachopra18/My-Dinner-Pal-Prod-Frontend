@@ -287,6 +287,7 @@ export const MyAccount = ({validateToken}) => {
     return(<>
         <div className="my_account_title">
             <h1>My Account</h1>
+            <h2>Meal plans sent out on Saturdays</h2>
         </div>
         {setUserInfo()}
     </>);
