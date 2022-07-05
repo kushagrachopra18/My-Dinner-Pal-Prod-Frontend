@@ -1,72 +1,55 @@
-# Full app deployed here: https://mydinnerpal.com/
+# My Dinner Pal Frontend
 
-# Getting Started with Create React App
+This is the production frontend application for mydinnerpal.com. It's a multipage web app made with React.js and includes integrations with the Stripe API. The purpose of this app is to serve as a landing page and account manager for customers and users (beta testers) where customers can purchase subscriptions to the paid My Dinner Pal email lists and users can manage their account information and subscription to the the email list. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Full app deployed here:** https://mydinnerpal.com/
 
-## Available Scripts
+## Screenshots / Highlighted Features
 
-In the project directory, you can run:
+*Website Hero*
 
-### `npm start`
+<img src="public/readme_images/website_hero.png" width="200"/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+*Log In Popup*
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<img src="public/readme_images/login_popup.png" width="200"/>
 
-### `npm test`
+*Password Reset Email*
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="public/readme_images/password_reset_email.png" width="200"/>
 
-### `npm run build`
+*Toggle Annual/Monthly Billing*
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="public/readme_images/toggle_annual.png" width="200"/>
+<img src="public/readme_images/toggle_monthly.png" width="200"/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+*Purchase Plan Popup*
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img src="public/readme_images/purchase_popup.png" width="200"/>
 
-### `npm run eject`
+*Signup Popup*
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<img src="public/readme_images/signup_popup.png" width="200"/>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+*Signup Success Popup*
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<img src="public/readme_images/signup_success_popup.png" width="200"/>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+*Account Home*
 
-## Learn More
+<img src="public/readme_images/account_home.png" width="200"/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+*Account Actions*
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img src="public/readme_images/account_actions.png" width="200"/>
 
-### Code Splitting
+*Delete Account*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<img src="public/readme_images/delete_account.png" width="200"/>
 
-### Analyzing the Bundle Size
+*Pause Meal Plans*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<img src="public/readme_images/pause_meal_plans.png" width="200"/>
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
