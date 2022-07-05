@@ -1,6 +1,6 @@
 # My Dinner Pal Frontend
 
-This is the production frontend application for mydinnerpal.com. It's a multipage web app made with React.js and includes integrations with the Stripe API. The purpose of this app is to serve as a landing page and account manager for customers and users (beta testers) where customers can purchase subscriptions to the paid My Dinner Pal email lists and users can manage their account information and subscription to the the email list. 
+This is the production frontend application for mydinnerpal.com. It's a multipage web app made with React.js and includes integrations with the Stripe API. The purpose of this app is to serve as a account manager and landing page for customers and users (beta testers) where customers can purchase subscriptions to the paid My Dinner Pal email lists and users can manage their account information and subscription to the the email list. 
 
 **Full app deployed here:** https://mydinnerpal.com/
 
