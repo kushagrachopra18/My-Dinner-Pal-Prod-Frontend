@@ -16,7 +16,7 @@ This is the production frontend application for mydinnerpal.com. It's a multipag
 
 *Password Reset Email*
 
-<img src="public/readme_images/password_reset_email.png" width="500"/>
+<img src="public/readme_images/password_reset_email.png" width="600"/>
 
 *Toggle Annual/Monthly Billing*
 
@@ -25,7 +25,7 @@ This is the production frontend application for mydinnerpal.com. It's a multipag
 
 *Purchase Plan Popup*
 
-<img src="public/readme_images/purchase_popup.png" width="500"/>
+<img src="public/readme_images/purchase_popup.png" width="600"/>
 
 *Signup Popup*
 
